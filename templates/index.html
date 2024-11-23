@@ -1,0 +1,326 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Chatbot and Nadi Parikshan</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        .container {
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        .chat-box {
+            max-height: 400px;
+            overflow-y: scroll;
+            border: 1px solid #ccc;
+            padding: 10px;
+            background-color: #f9f9f9;
+            margin-bottom: 20px;
+        }
+        .input-box {
+            width: 100%;
+            padding: 10px;
+            font-size: 16px;
+            margin-bottom: 10px;
+        }
+        .button {
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        .button:hover {
+            background-color: #45a049;
+        }
+        .audio-controls {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body> -->
+
+    <!-- <div class="container"> -->
+        <!-- <h1>AI Chatbot & Nadi Parikshan</h1> -->
+        
+        <!-- Chatbox to display conversation -->
+        <!-- <div id="chatBox" class="chat-box"></div> -->
+
+        <!-- User input text -->
+        <!-- <input type="text" id="userInput" class="input-box" placeholder="Type your message here..." /> -->
+
+        <!-- Buttons for text and audio input -->
+        <!-- <div class="audio-controls">
+            <button class="button" id="sendMessageButton">Send Message</button>
+            <button class="button" id="uploadAudioButton">Upload Audio</button>
+        </div> -->
+
+        <!-- File input for audio -->
+        <!-- <input type="file" id="audioInput" style="display: none" accept="audio/*" /> -->
+
+        <!-- Speech-to-Text API -->
+        <!-- <div class="audio-controls">
+            <button class="button" id="startRecordingButton">Start Recording</button>
+            <button class="button" id="stopRecordingButton" disabled>Stop Recording</button>
+        </div>
+
+        <audio id="audioResponse" controls></audio>
+    </div> -->
+
+    <!-- <script>
+        // Function to display the conversation in the chatbox
+        function updateChatBox(message, sender) {
+            const chatBox = document.getElementById('chatBox');
+            const messageElement = document.createElement('p');
+            messageElement.innerHTML = `<strong>${sender}:</strong> ${message}`;
+            chatBox.appendChild(messageElement);
+            chatBox.scrollTop = chatBox.scrollHeight; // Scroll to the bottom
+        } -->
+
+        <!-- // Send message to the server and display response
+        async function sendMessage() {
+            const userInput = document.getElementById('userInput').value.trim();
+            if (!userInput) return;
+
+            updateChatBox(userInput, 'You');
+            document.getElementById('userInput').value = ''; // Clear input field
+
+            try {
+                const response = await fetch('/chat', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ message: userInput, context: { gender: 'unknown' } })
+                });
+                const data = await response.json();
+                updateChatBox(data.response, 'Assistant');
+            } catch (error) {
+                console.error('Error sending message:', error);
+            }
+        } -->
+
+        <!-- // Handle file input (audio)
+        document.getElementById('audioInput').addEventListener('change', async (event) => {
+            const formData = new FormData();
+            formData.append('audio', event.target.files[0]);
+
+            try {
+                const response = await fetch('/transcribe', {
+                    method: 'POST',
+                    body: formData
+                });
+                const data = await response.json();
+                if (data.transcription) {
+                    updateChatBox(data.transcription, 'You');
+                    const aiResponse = await fetch('/chat', {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify({ message: data.transcription, context: { gender: 'unknown' } })
+                    });
+                    const aiData = await aiResponse.json();
+                    updateChatBox(aiData.response, 'Assistant');
+                } else {
+                    updateChatBox('Failed to transcribe audio. Please try again.', 'Assistant');
+                }
+            } catch (error) {
+                console.error('Error transcribing audio:', error);
+            }
+        }); -->
+
+        <!-- // Handle speech-to-text using Web API
+        let mediaRecorder;
+        let audioChunks = [];
+
+        document.getElementById('startRecordingButton').addEventListener('click', () => {
+            audioChunks = [];
+            navigator.mediaDevices.getUserMedia({ audio: true })
+                .then(stream => {
+                    mediaRecorder = new MediaRecorder(stream);
+                    mediaRecorder.ondataavailable = event => {
+                        audioChunks.push(event.data);
+                    };
+                    mediaRecorder.onstop = () => {
+                        const audioBlob = new Blob(audioChunks, { type: 'audio/wav' });
+                        const audioUrl = URL.createObjectURL(audioBlob);
+                        const audioFile = new File([audioBlob], 'recorded_audio.wav');
+                        document.getElementById('audioInput').files = new DataTransfer().files;
+                        document.getElementById('audioInput').files[0] = audioFile;
+                        document.getElementById('audioInput').dispatchEvent(new Event('change'));
+                    };
+                    mediaRecorder.start();
+                    document.getElementById('stopRecordingButton').disabled = false;
+                    document.getElementById('startRecordingButton').disabled = true;
+                })
+                .catch(err => {
+                    console.error('Error accessing microphone:', err);
+                });
+        });
+
+        document.getElementById('stopRecordingButton').addEventListener('click', () => {
+            if (mediaRecorder) {
+                mediaRecorder.stop();
+            }
+            document.getElementById('stopRecordingButton').disabled = true;
+            document.getElementById('startRecordingButton').disabled = false;
+        });
+
+        // Handle Send Message button
+        document.getElementById('sendMessageButton').addEventListener('click', sendMessage);
+    </script>
+</body>
+</html> -->
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Chatbot & Nadi Parikshan</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        .container {
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1, h2 {
+            text-align: center;
+            color: #333;
+        }
+        .dropdown, .input-box, .button {
+            width: 100%;
+            padding: 10px;
+            font-size: 16px;
+            margin-bottom: 10px;
+        }
+        .button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .button:hover {
+            background-color: #45a049;
+        }
+        .recommendations {
+            margin-top: 20px;
+            padding: 15px;
+            border: 1px solid #ccc;
+            background-color: #f9f9f9;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>AI Chatbot & Nadi Parikshan</h1>
+
+        <!-- Chatbox Section -->
+        <h2>Chatbot</h2>
+        <div id="chatBox" style="max-height: 400px; overflow-y: scroll; border: 1px solid #ccc; padding: 10px; margin-bottom: 20px;"></div>
+        <input type="text" id="userInput" class="input-box" placeholder="Type your message here...">
+        <button class="button" onclick="sendMessage()">Send Message</button>
+
+        <!-- Nadi Parikshan Section -->
+        <h2>Nadi Parikshan</h2>
+        <select id="nadiType" class="dropdown">
+            <option value="" disabled selected>Select your dominant Nadi</option>
+            <option value="vata">Vata</option>
+            <option value="pitta">Pitta</option>
+            <option value="kapha">Kapha</option>
+        </select>
+        <select id="gender" class="dropdown">
+            <option value="" disabled selected>Select your gender</option>
+            <option value="male">Male</option>
+            <option value="female">Female</option>
+        </select>
+        <select id="ageGroup" class="dropdown">
+            <option value="" disabled selected>Select your age group</option>
+            <option value="child">Child</option>
+            <option value="adult">Adult</option>
+            <option value="elderly">Elderly</option>
+        </select>
+        <button class="button" onclick="getRecommendations()">Get Recommendations</button>
+
+        <!-- Recommendations Section -->
+        <div id="recommendations" class="recommendations"></div>
+    </div>
+
+    <script>
+        // Chatbox Functionality
+        async function sendMessage() {
+            const userInput = document.getElementById('userInput').value.trim();
+            if (!userInput) return;
+
+            const chatBox = document.getElementById('chatBox');
+            chatBox.innerHTML += `<p><strong>You:</strong> ${userInput}</p>`;
+            document.getElementById('userInput').value = '';
+
+            const response = await fetch('/chat', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ message: userInput })
+            });
+            const data = await response.json();
+            chatBox.innerHTML += `<p><strong>Assistant:</strong> ${data.response}</p>`;
+        }
+
+        // Nadi Recommendations
+        async function getRecommendations() {
+            const nadiType = document.getElementById('nadiType').value;
+            const gender = document.getElementById('gender').value;
+            const ageGroup = document.getElementById('ageGroup').value;
+
+            if (!nadiType || !gender || !ageGroup) {
+                alert('Please select all options.');
+                return;
+            }
+
+            const response = await fetch('/nadi_recommendations', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ nadi: nadiType, gender: gender, age: ageGroup })
+            });
+
+            const data = await response.json();
+            const recommendations = `
+                <h3>Recommendations</h3>
+                <p><strong>General:</strong> ${data.general}</p>
+                <p><strong>Gender Specific:</strong> ${data.gender_specific}</p>
+                <p><strong>Age Specific:</strong> ${data.age_specific}</p>
+            `;
+            document.getElementById('recommendations').innerHTML = recommendations;
+        }
+    </script>
+
+</body>
+</html>

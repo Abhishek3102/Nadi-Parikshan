@@ -1,0 +1,17 @@
+{
+    "vata": {
+        "general": "Vata is dominant in people who are creative but may face anxiety. Stay warm, hydrated, and maintain regular routines.",
+        "female": "During menstruation, ensure proper hydration and avoid cold foods to reduce cramps.",
+        "male": "Consider yoga or meditation to manage stress caused by Vata dominance."
+    },
+    "pitta": {
+        "general": "Pitta dominance suggests a fiery nature. Eat cooling foods and avoid excessive spicy or oily dishes.",
+        "female": "For hormonal balance, include cooling herbs like aloe vera and chamomile tea.",
+        "male": "Stay active but avoid overexertion; practice mindfulness to curb irritability."
+    },
+    "kapha": {
+        "general": "Kapha dominance leads to stability but may cause lethargy. Focus on light, warming foods and regular exercise.",
+        "female": "Hormonal changes may lead to water retention; reduce salty foods and prioritize cardio workouts.",
+        "male": "Engage in stimulating activities to counteract Kapha-induced sluggishness."
+    }
+}
