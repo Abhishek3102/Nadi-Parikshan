@@ -130,26 +130,19 @@
 
 from flask import Flask, request, jsonify, render_template
 import json
-import os
 from dotenv import load_dotenv
-import speech_recognition as sr
-from gtts import gTTS
-from io import BytesIO
-import tempfile
 from huggingface_hub import InferenceClient
 
 load_dotenv()
 
 app = Flask(__name__)
 
-# Load Nadi Parikshan data
 def load_nadi_data():
     with open('nadi_data.json', 'r') as f:
         return json.load(f)
 
 nadi_data = load_nadi_data()
 
-# Load AI assistant model
 hf_api_token = "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"
 client = InferenceClient(
     "mistralai/Mixtral-8x7B-Instruct-v0.1",
@@ -158,12 +151,10 @@ client = InferenceClient(
 
 def generate_ai_response(user_input):
     system_message = "You are an AI assistant. Answer questions clearly and concisely."
-
     messages = [
         {"role": "system", "content": system_message},
         {"role": "user", "content": user_input}
     ]
-
     response = ""
     for message in client.chat_completion(
             messages=messages,
@@ -171,7 +162,6 @@ def generate_ai_response(user_input):
             stream=True
     ):
         response += message.choices[0].delta.content or ""
-
     return response
 
 @app.route('/')
@@ -188,18 +178,25 @@ def chat():
 def nadi_recommendations():
     nadi = request.json.get("nadi", "").lower()
     gender = request.json.get("gender", "").lower()
-    age = request.json.get("age", "")
-
+    age = request.json.get("age", "").lower()
     if nadi not in nadi_data:
         return jsonify({"error": "Invalid Nadi type provided."}), 400
-
     recommendations = nadi_data.get(nadi, {})
     general = recommendations.get("general", "No general recommendations available.")
     gender_specific = recommendations.get(gender, "")
     age_specific = recommendations.get("age", {}).get(age, "")
-
+    diet = recommendations.get("diet", {})
+    exercise = recommendations.get("exercise", "")
+    diseases = recommendations.get("diseases", {})
     response = {
         "general": general,
+        "diet": {
+            "preferred": diet.get("preferred", "No recommendations available."),
+            "avoid": diet.get("avoid", "No recommendations available.")
+        },
+        "exercise": exercise,
+        "common_diseases": diseases.get("common", "No disease data available."),
+        "remedies": diseases.get("remedies", "No remedies available."),
         "gender_specific": gender_specific,
         "age_specific": age_specific
     }
@@ -207,4 +204,3 @@ def nadi_recommendations():
 
 if __name__ == '__main__':
     app.run(debug=True)
-
