@@ -1,40 +1,108 @@
 {
     "vata": {
-        "general": "Vata is associated with creativity, quick thinking, and movement. Imbalances can cause anxiety, dry skin, constipation, joint pain, and irregular sleep patterns.",
+        "general": "Vata is associated with creativity, quick thinking, and movement. Imbalances can cause anxiety, dry skin, constipation, joint pain, irregular sleep patterns, and restlessness.",
         "diet": {
-            "preferred": "Warm, moist, and nourishing foods like soups, stews, cooked vegetables, sweet fruits (bananas, mangoes), whole grains (rice, oatmeal), and nuts (soaked almonds, walnuts).",
-            "avoid": "Cold, raw, dry foods like salads, crackers, popcorn, and ice-cold drinks. Avoid excessive caffeine or aerated drinks."
+            "preferred": "Warm, moist, and nourishing foods like soups, stews, cooked vegetables, sweet fruits (bananas, mangoes), whole grains (rice, oatmeal), nuts (soaked almonds, walnuts), and herbal teas like chamomile or ashwagandha.",
+            "avoid": "Cold, raw, dry foods like salads, crackers, popcorn, ice-cold drinks, aerated beverages, and excessive caffeine. Avoid fasting or irregular meal timings, as they aggravate Vata."
         },
-        "exercise": "Gentle, grounding exercises like yoga, tai chi, brisk walking, and light stretching. Avoid excessive cardio or high-intensity workouts that can deplete energy.",
+        "exercise": "Gentle, grounding exercises like yoga, tai chi, brisk walking, and light stretching. Prioritize balance-focused asanas like Tree Pose and restorative yoga sequences to calm the mind and body.",
         "diseases": {
-            "common": "Anxiety, arthritis, insomnia, constipation, dry skin, irritable bowel syndrome, and bloating.",
-            "remedies": "Use warm sesame oil for abhyanga (oil massage), practice alternate nostril breathing (Anulom Vilom), maintain a regular sleep and meal routine, and drink herbal teas like ashwagandha or chamomile."
+            "common": "Anxiety, arthritis, insomnia, constipation, bloating, dry skin, and irritable bowel syndrome (IBS).",
+            "remedies": "Use warm sesame oil for massages (Abhyanga), practice alternate nostril breathing (Anulom Vilom), maintain a regular sleep schedule, and drink herbal teas like ginger, fennel, or chamomile."
         },
-        "female": "During menstruation, consume warm teas like ginger or chamomile to reduce cramps. Avoid cold beverages and ensure enough rest to balance energy levels.",
-        "male": "Focus on joint care through regular oil massages and stretching exercises to prevent stiffness. Incorporate healthy fats like ghee into your diet to nourish tissues.",
+        "imbalances": {
+            "symptoms": "Restlessness, difficulty focusing, irregular sleep patterns, and an overactive mind.",
+            "recommendations": [
+                "Practice Chandra Bhedana pranayama to calm the nervous system.",
+                "Reduce caffeine intake and avoid spicy foods.",
+                "Include calming foods like cooked root vegetables (sweet potatoes, carrots) and warm milk with nutmeg before bed.",
+                "Meditate for 10–15 minutes daily to center your mind and balance energy."
+            ]
+        },
+        "lifestyle_tips": [
+            "Establish a consistent daily routine for meals, sleep, and activities.",
+            "Avoid overstimulation from screens before bedtime and practice grounding activities like journaling.",
+            "Engage in hobbies that stimulate creativity, like painting or writing, but balance them with regular relaxation techniques."
+        ],
+        "female": [
+            "Consume warm teas like ginger or chamomile during menstruation to ease cramps.",
+            "Avoid strenuous physical activities during periods. Focus on gentle yoga poses like Child’s Pose and restorative postures.",
+            "Include iron-rich foods like spinach, beetroot, and pomegranate in your diet to counter fatigue during your cycle."
+        ],
+        "male": [
+            "Focus on joint health by incorporating stretching exercises and regular massages with warming oils like mustard or sesame oil.",
+            "Boost stamina with grounding foods like ghee, nuts, and dates.",
+            "Practice stress-relieving pranayama techniques like Anulom Vilom to calm an overactive mind."
+        ],
         "age": {
-            "child": "Provide warm, easy-to-digest meals like porridge or lentil soup. Encourage creative play and avoid overstimulation like screen time. Use light massages with almond oil to promote relaxation.",
-            "adult": "Focus on regular meals and hydration. Practice yoga poses like Cat-Cow to ease tension. Avoid irregular sleep schedules or skipping meals to prevent imbalances.",
-            "elderly": "Incorporate bone-strengthening foods like sesame seeds and soaked almonds. Encourage restorative yoga and gentle walking to maintain mobility. Use warm mustard oil for massages to ease joint pain."
+            "child": [
+                "Provide warm, easy-to-digest meals like porridge or lentil soup.",
+                "Encourage creative play and avoid overstimulation like excessive screen time.",
+                "Use light massages with almond oil to promote relaxation and better sleep."
+            ],
+            "adult": [
+                "Focus on hydration and regular meals with balanced nutrition.",
+                "Practice yoga poses like Cat-Cow to release tension in the spine.",
+                "Avoid irregular work schedules or skipping meals, as this can aggravate Vata imbalances."
+            ],
+            "elderly": [
+                "Incorporate bone-strengthening foods like sesame seeds, soaked almonds, and milk.",
+                "Encourage restorative yoga, gentle walking, and breathing exercises to maintain mobility and calm the mind.",
+                "Use warm mustard oil for massages to relieve joint pain and stiffness."
+            ]
         }
     },
     "pitta": {
         "general": "Pitta governs digestion, metabolism, and energy production. Imbalances can lead to anger, irritability, heartburn, skin inflammation, and excessive body heat.",
         "diet": {
-            "preferred": "Cooling and hydrating foods like cucumbers, melons, coconut water, leafy greens, sweet fruits (pears, apples), and dairy products like milk or yogurt (in moderation).",
-            "avoid": "Spicy, oily, fried, and acidic foods like chilies, coffee, tomatoes, garlic, and fermented foods. Limit alcohol and excessive salt intake."
+            "preferred": "Cooling and hydrating foods like cucumbers, melons, coconut water, leafy greens, sweet fruits (pears, apples), dairy products like milk or yogurt (in moderation), and coriander or fennel tea.",
+            "avoid": "Spicy, oily, fried, and acidic foods like chilies, coffee, tomatoes, garlic, and fermented foods. Limit alcohol and excessive salt intake, as they aggravate Pitta."
         },
-        "exercise": "Moderate-intensity exercises like swimming, cycling, and yoga focusing on cooling poses like forward bends, seated twists, and child’s pose.",
+        "exercise": "Moderate-intensity exercises like swimming, cycling, and yoga focusing on cooling poses like forward bends, seated twists, and Child’s Pose.",
         "diseases": {
             "common": "Acidity, ulcers, skin rashes, high blood pressure, migraines, and inflammation.",
             "remedies": "Apply cooling coconut oil for skin irritations, drink aloe vera juice or coriander water for acidity, and practice mindfulness meditation or left-nostril breathing (Chandra Bhedana) to calm the mind."
         },
-        "female": "For hormonal balance, include aloe vera juice and turmeric milk in your diet. Practice restorative yoga during menstruation to avoid overexertion.",
-        "male": "Manage anger through cooling pranayama techniques like Sheetali or Sheetkari. Hydrate regularly and include coconut water or buttermilk in the diet.",
+        "imbalances": {
+            "symptoms": "Overheating, agitation, restlessness, and difficulty relaxing.",
+            "recommendations": [
+                "Consume cooling foods like watermelon, coconut water, and mint.",
+                "Practice Chandra Bhedana pranayama to calm agitation and reduce heat.",
+                "Avoid high-intensity activities during midday and opt for early morning or evening exercises.",
+                "Apply sandalwood or aloe vera to cool the skin."
+            ]
+        },
+        "lifestyle_tips": [
+            "Engage in calming hobbies like gardening or painting to channel Pitta energy.",
+            "Avoid competitive or high-stress environments that trigger irritability.",
+            "Incorporate gratitude journaling or mindfulness meditation into your daily routine to maintain mental balance."
+        ],
+        "female": [
+            "Include aloe vera juice and turmeric milk in your diet for hormonal balance.",
+            "Practice restorative yoga during menstruation and avoid spicy or fried foods to reduce inflammation.",
+            "Stay hydrated with cooling drinks like buttermilk or fennel tea."
+        ],
+        "male": [
+            "Practice Sheetali pranayama to cool the body and mind after intense work or workouts.",
+            "Include hydrating fruits and cooling spices like coriander in your meals.",
+            "Limit caffeine and alcohol, especially in the evenings, to prevent overheating."
+        ],
         "age": {
-            "child": "Avoid excessively spicy or salty snacks. Include sweet fruits and hydrating drinks. Encourage activities like swimming to keep them active without overheating.",
-            "adult": "Incorporate salads with cooling vegetables like cucumber and lettuce. Practice moderate yoga or cycling to release pent-up energy. Avoid late-night work or meals.",
-            "elderly": "Provide cooling herbal teas like coriander or fennel. Encourage walking during cooler parts of the day to maintain activity levels. Avoid exposure to excessive heat or long fasting periods."
+            "child": [
+                "Avoid spicy or salty snacks and opt for cooling fruits like watermelon and cucumbers.",
+                "Encourage swimming or light outdoor play in cooler parts of the day.",
+                "Provide hydration with coconut water or herbal teas like fennel."
+            ],
+            "adult": [
+                "Incorporate salads with cooling vegetables like cucumber and lettuce.",
+                "Practice moderate yoga or cycling to release pent-up energy.",
+                "Avoid working late hours or eating heavy meals before bedtime."
+            ],
+            "elderly": [
+                "Provide cooling herbal teas like coriander or fennel and easy-to-digest meals.",
+                "Encourage walking during cooler parts of the day to maintain activity levels.",
+                "Avoid long fasting periods and exposure to extreme heat."
+            ]
         }
     },
     "kapha": {
@@ -48,31 +116,46 @@
             "common": "Obesity, diabetes, sinusitis, congestion, sluggish digestion, and water retention.",
             "remedies": "Drink warm water with honey and lemon in the morning, practice Kapalabhati pranayama to clear congestion, and reduce sugar and salt intake in meals."
         },
-        "female": "For water retention during hormonal changes, reduce salty foods and increase cardio workouts. Include herbal teas like ginger or cinnamon to boost metabolism.",
-        "male": "Engage in stimulating physical activities to counter lethargy. Avoid overeating or heavy dinners and incorporate intermittent fasting if suitable.",
-        "age": {
-            "child": "Encourage physical activities like outdoor games. Provide light meals like soups and steamed vegetables. Limit sugary treats or heavy snacks.",
-            "adult": "Focus on regular exercise routines and portion control during meals. Avoid oversleeping or napping during the day to prevent lethargy.",
-            "elderly": "Include light, warming soups and herbal teas to boost digestion. Encourage daily walking and breathing exercises to maintain respiratory health."
-        }
-    },
-    "tridosha": {
-        "general": "Tridosha represents balance between Vata, Pitta, and Kapha. It indicates good health and optimal functioning of the body.",
-        "diet": {
-            "preferred": "Balanced meals with all six tastes (sweet, sour, salty, pungent, bitter, astringent). Fresh, seasonal, and wholesome foods like lentils, rice, vegetables, and ghee.",
-            "avoid": "Overeating, skipping meals, or eating processed and stale foods. Maintain moderation in portion sizes."
+        "imbalances": {
+            "symptoms": "Lethargy, heaviness, low energy, and lack of motivation.",
+            "recommendations": [
+                "Engage in energizing activities like brisk walking or jogging.",
+                "Include spicy foods like black pepper and ginger in your meals.",
+                "Avoid napping during the day and prioritize early morning workouts.",
+                "Reduce dairy intake and opt for light herbal teas."
+            ]
         },
-        "exercise": "Balanced routines like yoga, walking, swimming, or light aerobic exercises. Avoid extremes of exertion or idleness to maintain equilibrium.",
-        "diseases": {
-            "common": "Rare, but extreme imbalance can lead to chronic conditions like metabolic disorders or autoimmune issues.",
-            "remedies": "Maintain regular routines for eating and sleeping. Adapt diet and lifestyle to seasonal changes, and practice daily mindfulness or meditation."
-        },
-        "female": "Focus on balanced routines during menstruation. Include flaxseeds, sesame seeds, and turmeric in your diet to support hormonal health.",
-        "male": "Maintain balance through regular meditation, seasonal detoxes like panchakarma, and adequate hydration.",
+        "lifestyle_tips": [
+            "Start your day with an invigorating yoga sequence like Surya Namaskar.",
+            "Use warming spices like cinnamon and clove in your cooking.",
+            "Avoid oversleeping and maintain an active daily schedule."
+        ],
+        "female": [
+            "Focus on stimulating exercises during hormonal changes to boost energy.",
+            "Include ginger and cinnamon teas to support metabolism.",
+            "Avoid heavy, fried meals during your cycle and prioritize warm, light soups."
+        ],
+        "male": [
+            "Incorporate intermittent fasting to manage Kapha imbalances effectively.",
+            "Practice Kapalabhati pranayama to maintain respiratory health.",
+            "Engage in group physical activities like aerobics or sports to stay motivated."
+        ],
         "age": {
-            "child": "Provide balanced and easy-to-digest meals with seasonal fruits and vegetables. Encourage moderate physical play and ensure proper hydration.",
-            "adult": "Maintain a mix of all six tastes in meals. Practice yoga or light jogging to stay active and prevent stress. Avoid irregular eating patterns.",
-            "elderly": "Include warming foods and soups to boost digestion. Focus on restorative yoga, walking, and pranayama to maintain vitality and reduce stress."
+            "child": [
+                "Encourage outdoor play and physical activities like running or cycling.",
+                "Limit sugary snacks and focus on light, warm meals like steamed vegetables.",
+                "Incorporate natural sweeteners like honey instead of sugar."
+            ],
+            "adult": [
+                "Focus on regular high-intensity workouts and portion control.",
+                "Avoid oversleeping or napping during the day to maintain energy levels.",
+                "Incorporate herbal teas like green tea or black pepper tea."
+            ],
+            "elderly": [
+                "Include light, warming soups and teas to aid digestion.",
+                "Encourage daily walking or yoga to maintain flexibility and strength.",
+                "Avoid heavy, oily meals and prioritize small, frequent meals."
+            ]
         }
     }
 }
