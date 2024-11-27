@@ -150,7 +150,7 @@ client = InferenceClient(
 )
 
 def generate_ai_response(user_input):
-    system_message = "You are an AI assistant. Answer questions clearly and concisely."
+    system_message = "You are an AI assistant. Answer questions clearly and concisely. Answer questions related to nadi parikshan and diets, exercises and other things related to this domain only."
     messages = [
         {"role": "system", "content": system_message},
         {"role": "user", "content": user_input}
@@ -158,7 +158,7 @@ def generate_ai_response(user_input):
     response = ""
     for message in client.chat_completion(
             messages=messages,
-            max_tokens=150,
+            max_tokens=250,
             stream=True
     ):
         response += message.choices[0].delta.content or ""
@@ -182,25 +182,25 @@ def nadi_recommendations():
     if nadi not in nadi_data:
         return jsonify({"error": "Invalid Nadi type provided."}), 400
     recommendations = nadi_data.get(nadi, {})
-    general = recommendations.get("general", "No general recommendations available.")
-    gender_specific = recommendations.get(gender, "")
-    age_specific = recommendations.get("age", {}).get(age, "")
-    diet = recommendations.get("diet", {})
-    exercise = recommendations.get("exercise", "")
-    diseases = recommendations.get("diseases", {})
     response = {
-        "general": general,
-        "diet": {
-            "preferred": diet.get("preferred", "No recommendations available."),
-            "avoid": diet.get("avoid", "No recommendations available.")
-        },
-        "exercise": exercise,
-        "common_diseases": diseases.get("common", "No disease data available."),
-        "remedies": diseases.get("remedies", "No remedies available."),
-        "gender_specific": gender_specific,
-        "age_specific": age_specific
+        "general": recommendations.get("general", "No general recommendations available."),
+        "diet": recommendations.get("diet", {}),
+        "exercise": recommendations.get("exercise", "No exercise recommendations available."),
+        "common_diseases": recommendations.get("diseases", {}).get("common", "No disease data available."),
+        "remedies": recommendations.get("diseases", {}).get("remedies", "No remedies available."),
+        "imbalances": recommendations.get("imbalances", {}),
+        "lifestyle_tips": recommendations.get("lifestyle_tips", []),
+        "gender_specific": recommendations.get(gender, "No gender-specific recommendations available."),
+        "age_specific": recommendations.get("age", {}).get(age, "No age-specific recommendations available.")
     }
     return jsonify(response)
 
 if __name__ == '__main__':
     app.run(debug=True)
+
+
+
+
+
+
+

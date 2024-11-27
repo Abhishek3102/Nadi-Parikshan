@@ -157,5 +157,57 @@
                 "Avoid heavy, oily meals and prioritize small, frequent meals."
             ]
         }
+    },
+    "tridosha": {
+        "general": "Tridosha represents the balance of Vata, Pitta, and Kapha. When balanced, it indicates optimal health and harmonious functioning of the body.",
+        "diet": {
+            "preferred": "Balanced meals with all six tastes (sweet, sour, salty, pungent, bitter, astringent). Fresh, seasonal, and wholesome foods like lentils, rice, vegetables, and ghee.",
+            "avoid": "Overeating, skipping meals, or eating processed and stale foods. Avoid extremes of taste (too spicy or too sweet) and maintain moderation in portion sizes."
+        },
+        "exercise": "Balanced routines like yoga, walking, swimming, or light aerobic exercises. Avoid extremes of exertion or idleness to maintain equilibrium.",
+        "diseases": {
+            "common": "Rare, but extreme imbalance can lead to chronic conditions like metabolic disorders, autoimmune issues, or long-term stress-related illnesses.",
+            "remedies": "Maintain regular routines for eating and sleeping. Adapt diet and lifestyle to seasonal changes, and practice daily mindfulness or meditation."
+        },
+        "imbalances": {
+            "symptoms": "Unpredictable energy levels, difficulty focusing, and lack of physical harmony.",
+            "recommendations": [
+                "Practice Nadi Shodhana pranayama to balance Ida and Pingala nadis.",
+                "Incorporate a mix of warming and cooling foods depending on the season.",
+                "Engage in moderate physical activities like brisk walking or restorative yoga."
+            ]
+        },
+        "lifestyle_tips": [
+            "Maintain a regular routine for meals, sleep, and exercise to stabilize energy.",
+            "Practice gratitude journaling and mindfulness to keep stress levels low.",
+            "Engage in seasonal detoxes like Panchakarma to reset the body and mind."
+        ],
+        "female": [
+            "Include flaxseeds, sesame seeds, and turmeric in your diet to support hormonal health.",
+            "Focus on balanced routines during menstruation. Practice restorative yoga or meditation to maintain equilibrium.",
+            "Drink warm herbal teas like fennel or ginger to improve digestion and energy."
+        ],
+        "male": [
+            "Maintain balance through regular meditation, seasonal detoxes, and pranayama techniques.",
+            "Stay hydrated and include cooling drinks like buttermilk during hot seasons.",
+            "Engage in a mix of strength training and yoga to support overall fitness."
+        ],
+        "age": {
+            "child": [
+                "Provide balanced and easy-to-digest meals with seasonal fruits and vegetables.",
+                "Encourage moderate physical play and ensure proper hydration.",
+                "Avoid over-scheduling activities and allow for adequate rest."
+            ],
+            "adult": [
+                "Maintain a mix of all six tastes in meals to promote balanced energy.",
+                "Practice yoga or light jogging to stay active and reduce stress.",
+                "Avoid irregular eating patterns or skipping meals."
+            ],
+            "elderly": [
+                "Include warming foods and soups to boost digestion and immunity.",
+                "Focus on restorative yoga, walking, and pranayama to maintain vitality and reduce stress.",
+                "Avoid overexertion and prioritize mental calmness through mindfulness practices."
+            ]
+        }
     }
 }
