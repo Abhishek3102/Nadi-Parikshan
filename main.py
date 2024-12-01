@@ -150,7 +150,7 @@ client = InferenceClient(
 )
 
 def generate_ai_response(user_input):
-    system_message = "You are an AI assistant. Answer questions clearly and concisely. Answer questions related to nadi parikshan and diets, exercises and other things related to this domain only."
+    system_message = "You are an AI assistant. Answer questions clearly and concisely. Answer questions related to nadi parikshan and diets, exercises and other things related to this domain only. Also the user might ask follow up questions like they followed suggestions that u gave, but it still did not work out for them and they saw no improvements. Then you ask them more questions and try to go in details of their queries and then provide context based answers. "
     messages = [
         {"role": "system", "content": system_message},
         {"role": "user", "content": user_input}
